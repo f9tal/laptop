@@ -1,0 +1,109 @@
+/* gruvbox-dark */
+@define-color background      #282828;
+@define-color background-alt  #3c3836;
+@define-color foreground      #ebdbb2;
+@define-color foreground-alt  #fbf1c7;
+@define-color red             #cc241d;
+@define-color green           #98971a;
+@define-color yellow          #fabd2f;
+@define-color blue            #458588;
+
+* {
+    font-family: "Adwaita Mono";
+    font-size: 11px;
+    border: none;
+    border-radius: 0;
+}
+
+
+
+/* --- Base Window --- */
+window#waybar { 
+    background-color: @background; 
+    color: @foreground;    
+}
+
+
+/* --- Module Groups --- */
+.modules-left, .modules-right {
+	background-color: @background-alt;
+	padding: 0 5px;
+}
+
+
+/* --- Workspaces --- */
+#workspaces button {
+	padding: 0 8px; 
+ 	min-width: 1px;
+	color: @foreground-alt;
+    background-color: transparent;
+}
+
+
+#workspaces button.focused { 
+	background-color: @background;
+	color: @foreground;
+}
+
+
+#workspaces button:hover { 
+	background-color: @background;
+}
+
+
+/* --- General Module Styling --- */
+#custom-updates, 
+#disk, 
+#mpris, 
+#temperature, 
+#cpu, 
+#memory, 
+#network, 
+#backlight, 
+#pulseaudio, 
+#battery,
+#clock,
+#tray,
+#mode,
+#window {
+    padding: 0 8px;
+    margin: 0 2px;
+}
+
+
+#window {
+	 color: @foreground;
+	 background-color: @background;
+     padding: 0 10px;
+}
+
+
+/* --- Module States --- */
+
+/* Warning States */
+#temperature.warning,
+#cpu.warning, 
+#memory.warning, 
+#disk.warning {
+   color: @yellow;
+}
+
+/* Critical States */
+#battery.critical,
+#temperature.critical,
+#cpu.critical, 
+#memory.critical, 
+#disk.critical {
+   color: @red;
+}
+
+/* Special States */
+#network.disconnected {
+    color: @red;
+}
+
+#mode { 
+	 background-color: @red;
+	 color: @foreground;
+     border: 1px solid @background;
+}
